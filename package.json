@@ -1,0 +1,36 @@
+{
+  "name": "postgres-muchos",
+  "version": "1.0.0",
+  "description": "A Postgresql Class for pools",
+  "main": "lib/postgres-muchos.js",
+  "directories": {
+    "lib": "./lib",
+    "doc": "./doc",
+    "test": "./test",
+    "example": "./example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-docs": "node_modules/.bin/jsdoc lib/ --destination doc"
+  },
+  "keywords": [
+    "postgres",
+    "postgresql",
+    "pool",
+    "es6",
+    "class"
+  ],
+  "author": "Bill Hodges",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wildbillh/postgres-muchos"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.4.2"
+  },
+  "dependencies": {
+    "generic-pool": "^3.0.1",
+    "pg": "^6.1.0"
+  }
+}
