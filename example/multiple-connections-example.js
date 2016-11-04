@@ -1,4 +1,5 @@
 
+
 let PostgresMuchos = require('../lib/postgres-muchos');
 
 let logger = (data) => {
@@ -30,27 +31,24 @@ let emitControl = {
     results: true
 };
 
-let db = new PostgresMuchos(dbConfig, poolConfig);
-db.on('query', logger);
-db.on('results', logger);
+let waitFunction = (timeout) => {
+    return new Promise( (resolve, reject) => {
+        setTimeout(() => {resolve();}, timeout);
+    });
+
+};
+
+
+let db = new PostgresMuchos(dbConfig, poolConfig, emitControl);
+//db.on('query', logger);
+//db.on('results', logger);
 db.on('connect', logger);
 db.on('disconnect', logger);
 
-
-db.query('select now() as thedate')
-//})
-.then( (results) => {
-    console.log(results.rows);
-    return db.query('select $1::integer as thenumber', [100]);
-})
-.then ( (results)  => {
-    console.log(db.pool);
-    console.log(results.rows);
-    return db.close();
-})
-.then ( () => {
+db.close()
+.then( () => {
     console.log('normal exit');
 })
-.catch( (err) => {
-    console.log(err);
+.catch ( (err) => {
+   console.log(err);
 });
