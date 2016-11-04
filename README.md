@@ -1,5 +1,5 @@
 # PostgresMuchos
-
+[![Inline docs](http://inch-ci.org/github/wildbillh/postgres-muchos.svg?branch=master)](http://inch-ci.org/github/wildbillh/postgres-muchos)[![npm version](https://badge.fury.io/js/postgres-muchos.svg)](https://badge.fury.io/js/postgres-muchos)
 ## Synopsis
 PostgresMuchos is an ES6 class for managing a pool of postgresql connections.
 All methods return native promises. This class utilizes the [node-postgres](https://github.com/brianc/node-postgres) and 
