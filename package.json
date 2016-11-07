@@ -10,7 +10,7 @@
     "example": "./example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/.bin/mocha -t 10000 --async-only --reporter spec --ui bdd test",
     "generate-docs": "node_modules/.bin/jsdoc lib/ --destination doc"
   },
   "keywords": [
@@ -27,7 +27,9 @@
     "url": "https://github.com/wildbillh/postgres-muchos"
   },
   "devDependencies": {
-    "jsdoc": "^3.4.2"
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.2",
+    "mocha": "^3.1.2"
   },
   "dependencies": {
     "generic-pool": "^3.0.1",
